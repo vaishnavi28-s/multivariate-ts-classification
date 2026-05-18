@@ -1,6 +1,5 @@
 # multivariate-ts-classification
 
-(https://github.com/VaishnaviS28/multivariate-ts-classification/actions)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
@@ -12,10 +11,10 @@ End-to-end multivariate time-series fault classification pipeline with static me
 
 Industrial inspection systems generate two types of signals per event:
 
-- **Time-series** — frame-by-frame classification scores from a vision system (Azure Computer Vision) across N camera frames per event
-- **Static metadata** — machine ID, line speed, paper grade, supplier, detector position
+- **Time-series** : frame-by-frame classification scores from a vision system (Azure Computer Vision) across N camera frames per event
+- **Static metadata** : machine ID, line speed, paper grade, supplier, detector position
 
-Most time-series classifiers treat these separately or discard metadata entirely. This pipeline addresses the case where **fault classification requires signals from both domains simultaneously** — a pattern common in industrial deployments but underrepresented in published benchmarks.
+Most time-series classifiers treat these separately or discard metadata entirely. This pipeline addresses the case where **fault classification requires signals from both domains simultaneously**, a pattern common in industrial deployments but underrepresented in published benchmarks.
 
 **Quantified impact: metadata fusion adds +0.070 AUC to XGBoost and +0.028 AUC to TapNet — consistent across both model families and all 3 folds.**
 
@@ -110,7 +109,7 @@ features           (printer, grade,
 
 ## Data
 
-This repository ships no data. The pipeline is data-agnostic — bring your own event JSONs.
+This repository ships no data. The pipeline is data-agnostic; bring your own event JSONs.
 
 See [`data/README.md`](data/README.md) for the full schema specification.
 
