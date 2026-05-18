@@ -1,0 +1,39 @@
+# ── Pipeline constants ───────────────────────────────────────
+# These values were fixed during thesis development and must
+# not change between training and inference — changing them
+# invalidates saved artefacts.
+
+data:
+  timesteps: 300
+  num_features_per_cam: 5
+  min_valid_frames: 10
+  score_keys:
+    - no_defect
+    - defect
+    - rollenwechsel
+    - Kantenfehler
+    - tear
+
+training:
+  seed: 42
+  n_splits: 3
+  val_size: 0.2
+  default_fold: 1        # fold 1 had best AUC — use for production
+
+model:
+  n_estimators: 500
+  max_depth: 5
+  learning_rate: 0.05
+  subsample: 0.8
+  colsample_bytree: 0.8
+  early_stopping_rounds: 30
+
+inference:
+  # Data-driven zone thresholds derived from 14,073 labelled events
+  green_threshold: 0.30   # prob < 0.30 → Keine Reklamation (95.8% truly machine)
+  red_threshold: 0.70     # prob ≥ 0.70 → Reklamation     (62.7%+ truly paper)
+
+paths:
+  model_dir: ./processed_data/xgb_models
+  new_events_input: ./processed_data/new_events/input
+  new_events_output: ./processed_data/new_events/output

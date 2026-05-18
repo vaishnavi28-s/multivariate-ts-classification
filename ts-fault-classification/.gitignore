@@ -1,0 +1,44 @@
+# Data — never committed
+data/events/
+data/raw/
+data/processed/
+data/**/*.json
+data/**/*.zip
+data/**/*.csv
+data/**/*.parquet
+data/**/*.pkl
+!data/README.md
+
+# Model artefacts
+processed_data/
+models/
+*.pkl
+*.pt
+*.pth
+*.h5
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

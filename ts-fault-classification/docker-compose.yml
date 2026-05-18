@@ -1,0 +1,19 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./processed_data:/app/processed_data
+      - ./data:/app/data
+    environment:
+      - MODEL_DIR=/app/processed_data/xgb_models
+      - DEFAULT_FOLD=1
+
+  train:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./processed_data:/app/processed_data
+    command: python -m src.cli train --data_dir /app/data/events
+    profiles: [train]
