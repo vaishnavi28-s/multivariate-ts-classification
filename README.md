@@ -1,6 +1,6 @@
 # multivariate-ts-classification
 
-[![CI](https://github.com/VaishnaviS28/multivariate-ts-classification/actions/workflows/ci.yml/badge.svg)](https://github.com/VaishnaviS28/multivariate-ts-classification/actions)
+(https://github.com/VaishnaviS28/multivariate-ts-classification/actions)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
